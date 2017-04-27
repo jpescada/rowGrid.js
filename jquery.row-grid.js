@@ -83,10 +83,9 @@
           if(rowElemIndex === 0) {
             rowElems[rowElemIndex].className += ' ' + options.lastRowClass;
           }
-          rowElems[rowElemIndex].style.cssText =
-              'width: ' + itemAttrs[index+parseInt(rowElemIndex)-rowElems.length+1].width + 'px;' +
-              'height: ' + itemAttrs[index+parseInt(rowElemIndex)-rowElems.length+1].height + 'px;' +
-              'margin-right:' + ((rowElemIndex < rowElems.length - 1)?options.minMargin+'px' : 0);
+          rowElems[rowElemIndex].style.width = itemAttrs[index+parseInt(rowElemIndex)-rowElems.length+1].width + 'px';
+          rowElems[rowElemIndex].style.height = itemAttrs[index+parseInt(rowElemIndex)-rowElems.length+1].height + 'px';
+          rowElems[rowElemIndex].style.marginRight = ((rowElemIndex < rowElems.length - 1)?options.minMargin+'px' : 0);
         }
       }
 
@@ -117,10 +116,9 @@
             widthDiff += 1 - newWidth % 1;
             newWidth = Math.ceil(newWidth);
           }
-          rowElem.style.cssText =
-              'width: ' + newWidth + 'px;' +
-              'height: ' + newHeight + 'px;' +
-              'margin-right: ' + ((rowElemIndex < rowElems.length - 1)?rowMargin : 0) + 'px';
+          rowElem.style.width = newWidth + 'px';
+          rowElem.style.height = newHeight + 'px';
+          rowElem.style.marginRight = ((rowElemIndex < rowElems.length - 1)?rowMargin : 0) + 'px';
           if(rowElemIndex === 0) {
             rowElem.className += ' ' + options.firstItemClass;
           }
